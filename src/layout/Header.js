@@ -2,27 +2,32 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { connect } from "react-redux";
 import { navigationToggle, walletToggle } from "../redux/actions/siteSettings";
-import { stickyNav } from "../utilits";
+import { stickyNav } from "../utilits"; // Assuming this utility function is correctly imported and used
 
 const Header = ({ walletToggle, navigationToggle }) => {
   useEffect(() => {
-    stickyNav();
+    stickyNav(); // Assuming this function handles sticky navigation behavior
   }, []);
+
+  const handleJoinNowClick = (e) => {
+    e.preventDefault();
+    walletToggle(false);
+  };
 
   return (
     <header id="header">
       <div className="header">
         <div className="header_in">
           <div className="trigger_logo">
-          <div className="logo">
+            <div className="logo">
               <Link href="/">
                 <a>
-                  <img src="/img/logo.png" alt="" width={200} />
+                  <img src="/img/logo.png" alt="Logo" width={200} />
                 </a>
               </Link>
             </div>
           </div>
-          <div className="nav" style={{ opacity: 1 }}>
+          <nav className="nav">
             <ul>
               <li>
                 <Link href="/#home">
@@ -34,7 +39,6 @@ const Header = ({ walletToggle, navigationToggle }) => {
                   <a className="creative_link">About</a>
                 </Link>
               </li>
-              
               <li>
                 <Link href="/#events">
                   <a className="creative_link">Events</a>
@@ -51,14 +55,11 @@ const Header = ({ walletToggle, navigationToggle }) => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
           <div className="wallet">
             <a
               href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                walletToggle(false);
-              }}
+              onClick={handleJoinNowClick}
               className="metaportal_fn_button wallet_opener"
             >
               <span>Join Now</span>
