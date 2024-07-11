@@ -5,8 +5,10 @@ import SwiperCore, {
   Grid,
   Navigation,
   Pagination,
+  Progressbar,
 } from "swiper";
 import "swiper/css/effect-creative";
+import "swiper/css/progressbar";
 SwiperCore.use([
   Pagination,
   Navigation,
@@ -14,6 +16,7 @@ SwiperCore.use([
   Autoplay,
   Grid,
   EffectCreative,
+  Progressbar,
 ]);
 
 const roadmapStep = (mySwiper, step, widthParts) => {
@@ -38,6 +41,7 @@ const roadmapStep = (mySwiper, step, widthParts) => {
 
   step.style.width = (mySwiper.activeIndex + viewBox) * widthParts + "%";
 };
+
 export const roadMapProps = {
   loop: false,
   speed: 1500,
@@ -50,6 +54,11 @@ export const roadMapProps = {
   direction: "horizontal",
   loopAdditionalSlides: 10,
   watchSlidesProgress: true,
+  progressbar: {
+    el: ".swiper-progressbar",
+    type: "progressbar",
+    draggable: false,
+  },
   breakpoints: {
     768: {
       slidesPerView: 1,
@@ -96,6 +105,11 @@ export const Hero4Slider = {
   direction: "horizontal",
   loopAdditionalSlides: 10,
   watchSlidesProgress: true,
+  progressbar: {
+    el: ".swiper-progressbar",
+    type: "progressbar",
+    draggable: false,
+  },
 };
 
 export const hero6Slider = {
@@ -109,18 +123,12 @@ export const hero6Slider = {
     nextEl: ".next",
     prevEl: ".prev",
   },
-  // effect: "creative",
-  // creativeEffect: {
-  //   prev: {
-  //     shadow: true,
-  //     translate: [0, 0, -400],
-  //   },
-  //   next: {
-  //     translate: ["100%", 0, 0],
-  //   },
-  // },
   slidesPerView: 1,
-  // direction: direction,
   loopAdditionalSlides: 10,
   watchSlidesProgress: true,
+  progressbar: {
+    el: ".swiper-progressbar",
+    type: "progressbar",
+    draggable: false,
+  },
 };
