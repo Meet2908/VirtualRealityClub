@@ -145,6 +145,40 @@ const Blog = () => {
                   </div>
                 </div>
               </li>
+                            <li className="isotope-item">
+  <div className="blog__item">
+    <div className="counter">
+      <span className="cc">
+        <span>05</span>
+      </span>
+    </div>
+    <div className="meta">
+      <p>July 11, 2024 / Augmented Reality / 2 Comments</p>
+    </div>
+    <div className="title">
+      <h3>
+        <Link href="/blog-single">
+          <a>Augmented Reality in Modern Apps</a>
+        </Link>
+      </h3>
+    </div>
+    <div className="image">
+      <Link href="/blog-single">
+        <a>
+          <img src="/img/blog/ar_apps.jpg" alt="AR in Apps" />
+        </a>
+      </Link>
+    </div>
+    <div className="read_more">
+      <Link href="/blog-single">
+        <a>
+          <span>Read More</span>
+        </a>
+      </Link>
+    </div>
+  </div>
+</li>
+
             </ul>
           </div>
           <div className="metaportal_fn_pagination">
